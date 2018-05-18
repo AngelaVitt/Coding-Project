@@ -11,7 +11,7 @@ const columns = [{
 function Equals(a, b) {
   if (a === b) return true;
   if (a == null || b == null) return false;
-  if (a.length != b.length) return false;
+  if (a.length !== b.length) return false;
 
   for (var i = 0; i < a.length; ++i) {
     if (a[i] !== b[i]) return false;
@@ -35,7 +35,7 @@ class SearchableTable extends React.Component {
 
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.data != nextProps.data) {
+    if (!Equals(this.state.data,nextProps.data)) {
       this.setState({data: nextProps.data});
 
       const data = nextProps.data;
@@ -75,7 +75,7 @@ class SearchableTable extends React.Component {
                 visableDataNew.push(visableDataOld[i]);
               }
             }
-            var visableDataOld = this.state.visableData;
+            visableDataOld = this.state.visableData;
             if (!Equals(visableDataOld,visableDataNew)) {
               this.setState({visableData:visableDataNew});
               this.reloadMap(visableDataNew);

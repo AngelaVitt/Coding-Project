@@ -13,7 +13,7 @@ class App extends React.Component {
 	    this.state = {
 	     	markers: [{lat: 36, lng: -115}],
         ip_address:[]
-	    },
+	    };
 
 	    
 	    this.processData = this.processData.bind(this);
@@ -53,11 +53,10 @@ class App extends React.Component {
 			var response = xhr.responseText;
 			var coordinates = response.split( "\n" );
 			var ipAddress = [];
-			var n = 0;
 
-			for (var i = 0; i < coordinates.length && (n != 11); i++) {
+			for (var i = 0; i < coordinates.length; i++) {
             	if(!coordinates[i].startsWith("#")) { //Only deal with the actual data
-            		n += 1;
+            		
             		var splitLine = coordinates[i].split(",");
 
             		//this.convertIPToCoordinates(splitLine[0]);
