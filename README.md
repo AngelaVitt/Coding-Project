@@ -12,7 +12,7 @@
 
 ## Getting Started
 
-You should run npm install to create the node_modules folder. I had to install this plugin 
+You should run npm install to update packages. I had to install this google chrome plugin 
 https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi
 This plugin removes error messages to APIs that require the header "allow-control-allow-origin". Without this plugin, I can not transform IP Address to Latatiude and Longitude. 
 
