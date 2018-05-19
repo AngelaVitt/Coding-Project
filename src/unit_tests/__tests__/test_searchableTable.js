@@ -29,47 +29,6 @@ export default class SearchableTable extends React.Component {
       <ReactTable 
           data = {this.state.data}
           columns = {columns}
-          onFilteredChange = {(column, value, row) => {
-
-            const page = this.state.page;
-            const pageSize = this.state.pageSize;
-            const data = this.state.data;
-
-            var visableDataOld = data.slice(pageSize * page, pageSize * page + pageSize);
-            var visableDataNew = [];
-            var filter = row;
-            for (var i = 0; i < visableDataOld.length; i++) {
-              var ipAddress = visableDataOld[i].ipAddress;
-
-              if(ipAddress.startsWith(filter)){
-                visableDataNew.push(visableDataOld[i]);
-              }
-            }
-            visableDataOld = this.state.visableData;
-            if (!Equals(visableDataOld,visableDataNew)) {
-              this.setState({visableData:visableDataNew});
-              this.reloadMap(visableDataNew);
-            }
-            visableDataNew = [];
-          
-
-          }}
-          onPageSizeChange = {(pageSize) => {
-            const page = this.state.page;
-            const data = this.state.data;
-            this.setState({pageSize: pageSize});
-            var visableData = data.slice(pageSize * page, pageSize * page + pageSize);
-            this.setState({visableData:visableData});
-            this.reloadMap(visableData);
-          }}
-          onPageChange = {(page) => {
-            const pageSize = this.state.pageSize;
-            const data = this.state.data;
-            this.setState({page: page});
-            var visableData = data.slice(pageSize * page, pageSize * page + pageSize);
-            this.setState({visableData:visableData});
-            this.reloadMap(visableData);
-          }}
           sortable = {false}
           filterable
           defaultPageSize = {10}
