@@ -65,7 +65,16 @@ exports[`renders correctly 1`] = `
       },
     ]
   }
-  data={Array []}
+  data={
+    Array [
+      Object {
+        "ipAddress": 34.23423,
+      },
+      Object {
+        "ipAddress": 54.23423,
+      },
+    ]
+  }
   defaultExpanded={Object {}}
   defaultFilterMethod={[Function]}
   defaultFiltered={Array []}

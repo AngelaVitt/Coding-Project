@@ -8,26 +8,20 @@ const columns = [{
   accessor: 'ipAddress' // String-based value accessors!
 }]
 
+const data = [{
+    ipAddress: 34.23423
+  },{
+    ipAddress: 54.23423
+  }]
+
+
 export default class SearchableTable extends React.Component {
-  constructor(props){
-    super(props);
-    console.log("incoming props: " + JSON.stringify(this.props));
-    this.state = {
-      data: this.props.data,
-      page:0,
-      pageSize:10,
-      visableData:[]
-      
-    }
-
-  }
-
   
 
   render() {
     return (
       <ReactTable 
-          data = {this.state.data}
+          data = {data}
           columns = {columns}
           sortable = {false}
           filterable
