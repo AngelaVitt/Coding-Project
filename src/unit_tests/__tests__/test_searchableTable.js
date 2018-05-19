@@ -25,6 +25,8 @@ export default class SearchableTable extends React.Component {
           columns = {columns}
           sortable = {false}
           filterable
+          resolveData = {() => {
+          }}
           defaultPageSize = {10}
           pageSizeOptions = {[5, 10, 20, 25, 50, 100, 500, 1000]}
           defaultFilterMethod = {(filter, row, column) => {
