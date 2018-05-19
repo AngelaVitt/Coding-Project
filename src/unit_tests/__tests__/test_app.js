@@ -15,8 +15,6 @@ export default class App extends React.Component {
       };
 
       
-      this.processData = this.processData.bind(this);
-      this.processIPMapping = this.processIPMapping.bind(this);
   }
 
   render() {
@@ -35,7 +33,7 @@ export default class App extends React.Component {
 test("renders correctly", () => {
   const renderer = new ShallowRenderer();
 
-  const result = renderer.render(<SimpleMap/>);
+  const result = renderer.render(<App/>);
 
   expect(result).toMatchSnapshot();
 });

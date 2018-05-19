@@ -180,26 +180,29 @@ exports[`renders correctly 2`] = `
 `;
 
 exports[`renders correctly 3`] = `
-<GoogleMap
-  debounced={true}
-  defaultCenter={undefined}
-  defaultZoom={undefined}
-  distanceToMouse={[Function]}
-  googleMapLoader={[Function]}
-  heatmap={Object {}}
-  heatmapLibrary={false}
-  hoverDistance={30}
-  layerTypes={Array []}
-  options={[Function]}
-  style={
-    Object {
-      "height": "100%",
-      "margin": 0,
-      "padding": 0,
-      "position": "relative",
-      "width": "100%",
+<div>
+  <div
+    style={
+      Object {
+        "height": "600px",
+        "width": "100%",
+      }
     }
-  }
-  yesIWantToUseGoogleMapApiInternals={false}
-/>
+  >
+    <SimpleMap
+      markers={
+        Array [
+          Object {
+            "lat": 36,
+            "lng": -115,
+          },
+        ]
+      }
+    />
+  </div>
+  <SearchableTable
+    callbackFromParent={undefined}
+    data={Array []}
+  />
+</div>
 `;
